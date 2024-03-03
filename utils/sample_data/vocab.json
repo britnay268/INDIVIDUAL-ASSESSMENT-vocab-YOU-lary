@@ -1,0 +1,98 @@
+{
+  "-Ns-b9-zO5DOelqaHaFP": {
+    "title": "HTML Forms",
+    "definition": "HTML forms are used to collect user input on a web page. They consist of various form elements such as input fields, buttons, checkboxes, and dropdowns, allowing users to submit data to a server.",
+    "language_id": "-Ns-cIa2fLmA4nK13rHy",
+    "timeSubmitted": "2024-03-01 12:24:25",
+    "uid": "",
+    "firebaseKey": ""
+  },
+  "-Ns-b900uBeMp21jJSRf": {
+    "title": "CSS Flexbox Layout",
+    "definition": "CSS Flexbox is a layout model that allows for the alignment and distribution of items within a container along a single axis. It simplifies the design of flexible and responsive layouts in web applications.",
+    "language_id": "-Ns-cIa2fLmA4nK13rHz",
+    "timeSubmitted": "2023-05-16 21:34:42",
+    "uid": "",
+    "firebaseKey": ""
+  },
+  "-Ns-b901T2RHflay0dre": {
+    "title": "JavaScript Promises",
+    "definition": "Promises in JavaScript represent the eventual completion or failure of an asynchronous operation and its resulting value. They provide a cleaner and more intuitive way to handle asynchronous code compared to callbacks.",
+    "language_id": "-Ns-cIa3W_M2cC-21sIw",
+    "timeSubmitted": "2023-10-26 02:06:17",
+    "uid": "",
+    "firebaseKey": ""
+  },
+  "-Ns-b902NuQ2GJYJsWbH": {
+    "title": "Python Web Frameworks",
+    "definition": "Python web frameworks are libraries that provide tools and utilities for building web applications using the Python programming language. Examples include Django, Flask, and Pyramid.",
+    "language_id": "-Ns-cIa3W_M2cC-21sIx",
+    "timeSubmitted": "2023-05-14 08:09:29",
+    "uid": "",
+    "firebaseKey": ""
+  },
+  "-Ns-b903x4D1nghBWjqa": {
+    "title": "HTML Semantics",
+    "definition": "HTML semantics refers to the meaning or purpose of elements in an HTML document. Semantically correct HTML enhances accessibility, search engine optimization (SEO), and the overall structure of a webpage.",
+    "language_id": "-Ns-cIa2fLmA4nK13rHy",
+    "timeSubmitted": "2024-03-15 12:06:19",
+    "uid": "",
+    "firebaseKey": ""
+  },
+  "-Ns-b9044Xbmq0fMXVjO": {
+    "title": "CSS Grid Layout",
+    "definition": "CSS Grid is a layout system that allows for the creation of two-dimensional grid-based layouts. It enables precise control over the placement and alignment of elements within a grid container, making it ideal for complex web layouts.",
+    "language_id": "-Ns-cIa2fLmA4nK13rHz",
+    "timeSubmitted": "2023-12-15 00:20:58",
+    "uid": "",
+    "firebaseKey": ""
+  },
+  "-Ns-b905K1U0Ii9Gk7HH": {
+    "title": "JavaScript Event Handling",
+    "definition": "Event handling in JavaScript involves responding to user actions or browser events, such as clicks, keypresses, or mouse movements. Event listeners are used to execute code in response to these events.",
+    "language_id": "-Ns-cIa3W_M2cC-21sIw",
+    "timeSubmitted": "2024-01-04 13:59:42",
+    "uid": "",
+    "firebaseKey": ""
+  },
+  "-Ns-b906K6B3VpwCgb3t": {
+    "title": "Python Data Structures",
+    "definition": "Python data structures are collections of data values, the relationships among them, and the functions or operations that can be applied to them. Common data structures include lists, dictionaries, tuples, and sets.",
+    "language_id": "-Ns-cIa3W_M2cC-21sIx",
+    "timeSubmitted": "2023-05-31 06:14:51",
+    "uid": "",
+    "firebaseKey": ""
+  },
+  "-Ns-b907_GiNoCnvwCNM": {
+    "title": "HTML5 Canvas",
+    "definition": "HTML5 Canvas is a powerful feature that allows dynamic, scriptable rendering of 2D shapes and bitmap images. It is commonly used for creating animations, games, data visualizations, and interactive graphics on web pages.",
+    "language_id": "-Ns-cIa2fLmA4nK13rHy",
+    "timeSubmitted": "2023-11-08 14:12:39",
+    "uid": "",
+    "firebaseKey": ""
+  },
+  "-Ns-b908Epxu9aT5_ykS": {
+    "title": "CSS Transitions and Animations",
+    "definition": " CSS transitions and animations are techniques used to add dynamic movement and visual effects to elements on a webpage. Transitions enable smooth transitions between CSS property values, while animations allow for more complex animations with keyframes.",
+    "language_id": "-Ns-cIa2fLmA4nK13rHz",
+    "timeSubmitted": "2023-06-14 11:42:28",
+    "uid": "",
+    "firebaseKey": ""
+  },
+  "-Ns-b909UhkiPU79c8Lb": {
+    "title": "JavaScript Array Methods",
+    "definition": "JavaScript array methods are built-in functions used to manipulate arrays. They include methods such as push(), pop(), shift(), unshift(), map(), filter(), and reduce(), among others.",
+    "language_id": "-Ns-cIa3W_M2cC-21sIw",
+    "timeSubmitted": "2024-02-26 08:05:08",
+    "uid": "",
+    "firebaseKey": ""
+  },
+  "-Ns-b90ANI0h_9izNcnf": {
+    "title": "Python File Handling",
+    "definition": "Python file handling refers to the process of reading from and writing to files on a computer's filesystem using the Python programming language. It involves opening, reading, writing, and closing files as needed.",
+    "language_id": "-Ns-cIa3W_M2cC-21sIx",
+    "timeSubmitted": "2023-08-18 13:23:25",
+    "uid": "",
+    "firebaseKey": ""
+  }
+}
