@@ -1,6 +1,8 @@
 import clearDom from '../utils/clearDom';
 import renderToDom from '../utils/renderToDom';
 
+// SHOWS The filter buttons and cards
+// May need to change this because it will be a merged data set to get language
 const showVocab = (array) => {
   clearDom();
 
@@ -16,9 +18,9 @@ const showVocab = (array) => {
     domStr += `
     <div class="card" style="width: 18rem;">
       <div class="card-body">
-        <h5 class="card-title" id="vocab-title">${item.title}</h5>
-        <h6 class="card-subtitle mb-2 text-body-secondary" id="vocab-language">${item.language}</h6>
-        <p class="card-text" id="vocab-definition">${item.definition}</p>
+        <h5 class="card-title">${item.title}</h5>
+        <h6 class="card-subtitle mb-2 text-body-secondary">${item.language}</h6>
+        <p class="card-text">${item.definition}</p>
         <a href="#" class="card-link" id="vocab-edit">Edit</a>
         <a href="#" class="card-link" id="vocab-delete">Delete</a>
       </div>
