@@ -7,6 +7,7 @@ const domBuilder = () => {
       <div id="filterBtns"></div>
       <div id="vocab-container"></div>
       <div id="language-container"></div>
+      <div id="form-container"></div>
     </div>
     </div>`;
 
