@@ -4,7 +4,7 @@ const endpoint = client.databaseURL;
 
 // TODO: Get Vocab
 const getLanguage = () => new Promise((resolve, reject) => {
-  fetch(endpoint, {
+  fetch(`${endpoint}/language.json`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json'

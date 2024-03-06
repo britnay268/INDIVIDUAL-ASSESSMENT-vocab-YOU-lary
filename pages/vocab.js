@@ -1,10 +1,11 @@
-// import clearDom from '../utils/clearDom';
+// import getLanguage from '../api/languageData';
+import clearDom from '../utils/clearDom';
 import renderToDom from '../utils/renderToDom';
 
 // SHOWS The filter buttons and cards
 // May need to change this because it will be a merged data set to get language
 const showVocab = (array) => {
-  // clearDom();
+  clearDom();
 
   const filterBtnStr = `
   <button type="button" class="btn btn-outline-dark" id="filter-html">HTML</button>
@@ -21,8 +22,8 @@ const showVocab = (array) => {
         <h5 class="card-title">${item.title}</h5>
         <h6 class="card-subtitle mb-2 text-body-secondary">${item.language_id}</h6>
         <p class="card-text">${item.definition}</p>
-        <a href="#" class="card-link" id="vocab-edit">Edit</a>
-        <a href="#" class="card-link" id="vocab-delete">Delete</a>
+        <a href="#" class="card-link" id="vocab-edit--${item.firebaseKey}">Edit</a>
+        <a href="#" class="card-link" id="vocab-delete--${item.firebaseKey}">Delete</a>
       </div>
     </div>`;
   });
