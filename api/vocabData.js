@@ -13,7 +13,6 @@ const getVocab = (uid) => new Promise((resolve, reject) => {
     .then((response) => response.json())
     .then((data) => {
       if (data) {
-        console.warn(data);
         resolve(Object.values(data));
       } else {
         resolve([]);

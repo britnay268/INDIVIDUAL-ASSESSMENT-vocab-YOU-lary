@@ -3,6 +3,12 @@ const domEvents = () => {
     if (e.target.id.includes('vocab-edit')) {
       console.warn('CLICKED EDIT');
     }
+    if (e.target.id.includes('vocab-delete')) {
+      console.warn('CLICKED DELETE');
+    }
+    if (e.target.id.includes('filter-html')) {
+      console.warn('FILTERED by HTML');
+    }
   });
 };
 

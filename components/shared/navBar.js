@@ -11,7 +11,7 @@ const navBar = () => {
       <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0"
           <li class="nav-item">
-            <a class="nav-link" href="#" id="sale-books">Create Vocab Card</a>
+            <a class="nav-link" href="#" id="vocab-entry">Create Vocab Card</a>
           </li>
           <form class="d-flex" role="search">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
