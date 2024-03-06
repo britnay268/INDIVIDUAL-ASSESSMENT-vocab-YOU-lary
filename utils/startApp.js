@@ -9,17 +9,14 @@ import showVocab from '../pages/vocab';
 
 const startApp = (uid) => {
   domBuilder();
-  // DOM EVENTS GO HERE
-  domEvents();
-  // FORM EVENTS GO HERE
-  formEvents();
+  domEvents(); // DOM EVENTS GO HERE
+  formEvents(); // FORM EVENTS GO HERE
   navBar();
   logoutButton();
-  // NAVBAR EVENTLISTENERS GO HERE
-  navEvents(uid);
+  navEvents(uid); // NAVBAR EVENTLISTENERS GO HERE
 
   // Put the cards on the DOM on app load
-  getVocab(uid).then(showVocab);
+  getVocab(uid).then((vocab) => showVocab(vocab, uid));
 };
 
 export default startApp;

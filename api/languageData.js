@@ -3,8 +3,8 @@ import client from '../utils/client';
 const endpoint = client.databaseURL;
 
 // TODO: Get Vocab
-const getLanguage = () => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/language.json`, {
+const getLanguage = (uid) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/language.json?orderBy="uid"&equalTo="${uid}"`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json'
