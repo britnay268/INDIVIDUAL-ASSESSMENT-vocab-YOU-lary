@@ -1,5 +1,6 @@
 import clearDom from '../../utils/clearDom';
 import renderToDom from '../../utils/renderToDom';
+import selectLanguage from './selectLanguage';
 
 const addVocabEntry = (obj = {}) => {
   clearDom();
@@ -19,6 +20,7 @@ const addVocabEntry = (obj = {}) => {
 
   renderToDom('#form-container', domStr);
   // selectLanguage(); This for the person to select the language associated with the vocab term
+  selectLanguage(`${obj.uid}`, `${obj.language_id}`);
 };
 
 export default addVocabEntry;

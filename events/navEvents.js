@@ -4,16 +4,17 @@ import showVocab from '../pages/vocab';
 
 const navEvents = (uid) => {
   document.querySelector('#vocab-entry').addEventListener('click', () => {
-    console.warn('Clicked a Potential Form');
+    // console.warn('Clicked a Potential Form');
+    addVocabEntry({ uid });
   });
 
   document.querySelector('#logo').addEventListener('click', () => {
     getVocab(uid).then((vocab) => showVocab(vocab, uid));
   });
 
-  document.querySelector('#vocab-entry').addEventListener('click', () => {
-    addVocabEntry();
-  });
+  // document.querySelector('#vocab-entry').addEventListener('click', () => {
+  //   addVocabEntry();
+  // });
 };
 
 export default navEvents;
