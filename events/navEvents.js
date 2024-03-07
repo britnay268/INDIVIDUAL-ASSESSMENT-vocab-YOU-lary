@@ -4,7 +4,7 @@ import showVocab from '../pages/vocab';
 
 const navEvents = (uid) => {
   document.querySelector('#vocab-entry').addEventListener('click', () => {
-    // console.warn('Clicked a Potential Form');
+    console.warn('Clicked a Potential Form');
     addVocabEntry({ uid });
   });
 
