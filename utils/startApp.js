@@ -10,7 +10,7 @@ import showVocab from '../pages/vocab';
 const startApp = (uid) => {
   domBuilder();
   domEvents(); // DOM EVENTS GO HERE
-  formEvents(); // FORM EVENTS GO HERE
+  formEvents(uid); // FORM EVENTS GO HERE
   navBar();
   logoutButton();
   navEvents(uid); // NAVBAR EVENTLISTENERS GO HERE

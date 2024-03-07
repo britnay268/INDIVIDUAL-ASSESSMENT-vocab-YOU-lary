@@ -58,6 +58,7 @@ const updateVocab = (payload) => new Promise((resolve, reject) => {
     headers: {
       'Content-Type': 'application/json'
     },
+    body: JSON.stringify(payload),
   })
     .then((response) => response.json())
     .then(resolve)
