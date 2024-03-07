@@ -13,7 +13,7 @@ const formEvents = (uid) => {
         language_id: document.querySelector('#language_id').value,
         timeSubmitted: Date(Date.now),
         firebaseKey,
-        uid
+        uid,
       };
 
       updateVocab(payload).then(() => {
