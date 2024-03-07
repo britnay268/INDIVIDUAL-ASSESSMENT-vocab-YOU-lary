@@ -8,11 +8,11 @@ const addVocabEntry = (obj = {}) => {
   <form id="${obj.firebaseKey ? `update-vocab--${obj.firebaseKey}` : 'submit-vocab'}" class="mb-4">
    <div class="mb-3">
      <label for="vocab-title" class="form-label">Title</label>
-     <input type="text" class="form-control" id="vocab-title" placeholder="Enter a word or phrase" value="${obj.title || ''}">
+     <input type="text" class="form-control" id="vocab-title" placeholder="Enter a word or phrase" value="${obj.title || ''}" required>
    </div>
    <div class="mb-3">
      <label for="vocab-definition" class="form-label">Definition</label>
-     <input type="text" class="form-control" id="vocab-definition" placeholder="Enter a definition" value="${obj.definition || ''}">
+     <input type="text" class="form-control" id="vocab-definition" placeholder="Enter a definition" value="${obj.definition || ''}" required>
   </div>
   <div class="form-group" id="select-language"></div>
   <button type="submit" class="btn btn-primary mt-3">${obj.firebaseKey ? 'Update Vocab' : 'Submit Form'}</button>

@@ -50,6 +50,18 @@ const getSingleVocab = (firebaseKey) => new Promise((resolve, reject) => {
 });
 
 // TODO: Create Vocab
+const createVocab = (payload) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/vocab.json`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(payload),
+  })
+    .then((response) => response.json())
+    .then((data) => resolve(data))
+    .catch(reject);
+});
 
 // TODO: Update Voacb
 const updateVocab = (payload) => new Promise((resolve, reject) => {
@@ -66,5 +78,5 @@ const updateVocab = (payload) => new Promise((resolve, reject) => {
 });
 
 export {
-  getVocab, updateVocab, getSingleVocab, deleteSingleVocab
+  getVocab, updateVocab, getSingleVocab, deleteSingleVocab, createVocab
 };
