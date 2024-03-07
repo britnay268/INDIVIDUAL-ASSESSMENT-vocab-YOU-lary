@@ -22,7 +22,7 @@ const getVocab = (uid) => new Promise((resolve, reject) => {
 });
 
 // TODO: Delete Vocab
-const deleteVocab = (firebaseKey) => new Promise((resolve, reject) => {
+const deleteSingleVocab = (firebaseKey) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/vocab/${firebaseKey}.json`, {
     method: 'DELETE',
     headers: {
@@ -66,5 +66,5 @@ const updateVocab = (payload) => new Promise((resolve, reject) => {
 });
 
 export {
-  getVocab, updateVocab, getSingleVocab, deleteVocab
+  getVocab, updateVocab, getSingleVocab, deleteSingleVocab
 };
