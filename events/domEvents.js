@@ -1,3 +1,4 @@
+// import getLanguage from '../api/languageData';
 import { deleteSingleVocab, getSingleVocab, getVocab } from '../api/vocabData';
 import addVocabEntry from '../components/forms/addVocabEntry';
 import showVocab from '../pages/vocab';
@@ -5,12 +6,10 @@ import showVocab from '../pages/vocab';
 const domEvents = (uid) => {
   document.querySelector('#container').addEventListener('click', (e) => {
     if (e.target.id.includes('vocab-edit')) {
-      // console.warn('CLICKED EDIT', e.target.id);
       const [, firebaseKey] = e.target.id.split('--');
       getSingleVocab(firebaseKey).then(addVocabEntry);
     }
     if (e.target.id.includes('vocab-delete')) {
-      console.warn('CLICKED DELETE');
       // eslint-disable-next-line no-alert
       if (window.confirm('Want to delete?')) {
         const [, firebaseKey] = e.target.id.split('--');
@@ -20,9 +19,16 @@ const domEvents = (uid) => {
         });
       }
     }
-    if (e.target.id.includes('filter-html')) {
-      console.warn('FILTERED by HTML');
-    }
+    // if (e.target.id.includes('filter-html')) {
+    //   console.warn('FILTERED by HTML');
+    //   const languages = await getLanguage(uid);
+    //   const vocabs = await getVocab(uid);
+    //   const singleLang = await languages.find((lang) => lang.firebaseKey === vocabs.language_id);
+    //   console.warn(vocabs);
+    //   if (singleLang. === 'HTML') {
+    //     getVocab(uid).then((vocab) => showVocab(vocab, uid));
+    //   }
+    // }
   });
 };
 
