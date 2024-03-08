@@ -78,5 +78,5 @@ const updateVocab = (payload) => new Promise((resolve, reject) => {
 });
 
 export {
-  getVocab, updateVocab, getSingleVocab, deleteSingleVocab, createVocab
+  getVocab, updateVocab, getSingleVocab, deleteSingleVocab, createVocab,
 };

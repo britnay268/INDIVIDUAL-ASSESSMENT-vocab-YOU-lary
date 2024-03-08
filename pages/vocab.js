@@ -9,6 +9,7 @@ const showVocab = async (array, uid) => {
   clearDom();
 
   const filterBtnStr = `
+  <button type="button" class="btn btn-outline-dark" id="all-vocabCards">All Cards</button>
   <button type="button" class="btn btn-outline-dark" id="filter-html">HTML</button>
   <button type="button" class="btn btn-outline-dark" id="filter-css">CSS</button>
   <button type="button" class="btn btn-outline-dark" id="filter-js">JavaScript</button>
