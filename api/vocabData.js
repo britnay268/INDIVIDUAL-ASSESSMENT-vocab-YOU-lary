@@ -77,6 +77,22 @@ const updateVocab = (payload) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+const getVocabByLanguageID = (uid) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/vocab.json?orderBy="language_id"&equalTo="${uid}"`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.warn(data);
+      const languageID = Object.values(data).filter((item) => item.language_id);
+      resolve(languageID);
+    })
+    .catch(reject);
+});
+
 export {
-  getVocab, updateVocab, getSingleVocab, deleteSingleVocab, createVocab,
+  getVocab, updateVocab, getSingleVocab, deleteSingleVocab, createVocab, getVocabByLanguageID
 };
