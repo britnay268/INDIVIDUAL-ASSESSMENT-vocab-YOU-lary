@@ -7,11 +7,11 @@ const addVocabEntry = (obj = {}) => {
   const domStr = `
   <form id="${obj.firebaseKey ? `update-vocab--${obj.firebaseKey}` : 'submit-vocab'}" class="mb-3">
    <div class="form-group">
-     <label for="vocab-title" class="form-label">Title</label>
+     <label for="vocab-title">Title</label>
      <input type="text" class="form-control" id="vocab-title" placeholder="Enter a word or phrase" value="${obj.title || ''}" required>
    </div>
    <div class="form-group">
-     <label for="vocab-definition" class="form-label">Definition</label>
+     <label for="vocab-definition">Definition</label>
      <textarea type="text" class="form-control" id="vocab-definition" style="height: 100px" placeholder="Enter a definition" value="${obj.definition || ''}" required></textarea>
   </div>
   <div class="form-group" id="select-language"></div>

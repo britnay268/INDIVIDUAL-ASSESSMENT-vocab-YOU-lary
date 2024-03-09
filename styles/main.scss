@@ -1,10 +1,61 @@
 @import "~@fortawesome/fontawesome-free/css/all.min.css";
 @import "~bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+
 
 
 body {
-  background-color: antiquewhite;
-  color: brown;
-  text-align: center;
+  background-color: forestgreen;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
   margin-top: 100px;
+
+  #filterBtns {
+    margin: 0 auto;
+  }
+
+  #vocab-container {
+    margin-top: 20px;
+    display: flex;
+    flex-flow: row wrap;
+    text-align: center;
+    justify-content: center;
+
+    .card {
+      width: 300px;
+      margin: 5px;
+      background-color: gray;
+      color: white;
+    }
+
+    a {
+      color: #6a01ebbf;
+    }
+
+    .card-title {
+      font-family: "Caveat", cursive;
+      font-size: 35px;
+    }
+  }
+
+  #form-container {
+    width: 80%;
+    margin: auto;
+    justify-content: center;
+    color: black;
+    font-weight: bold;
+
+    .form-group {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+#logo {
+  font-family: "Caveat", cursive;
+  font-size: 30px;
 }
