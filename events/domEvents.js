@@ -42,6 +42,24 @@ const domEvents = (uid) => {
     if (e.target.id.includes('all-vocabCards')) {
       getVocab(uid).then((vocab) => showVocab(vocab, uid));
     }
+
+    if (e.target.id.includes('alphabetically')) {
+      const vocab = await getVocab(uid);
+      vocab.sort((a, b) => a.title.localeCompare(b.title));
+      showVocab(vocab, uid);
+    }
+
+    if (e.target.id.includes('oldest')) {
+      const vocab = await getVocab(uid);
+      vocab.sort((a, b) => a.timeSubmitted.localeCompare(b.timeSubmitted));
+      showVocab(vocab, uid);
+    }
+
+    if (e.target.id.includes('newest')) {
+      const vocab = await getVocab(uid);
+      vocab.sort((a, b) => b.timeSubmitted.localeCompare(a.timeSubmitted));
+      showVocab(vocab, uid);
+    }
   });
 };
 
