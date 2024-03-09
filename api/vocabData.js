@@ -93,6 +93,17 @@ const getVocabByLanguageID = (uid) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+const searchVocab = async (searchValue, uid) => {
+  const allVocab = await getVocab(uid);
+
+  const filteredVocab = await allVocab.filter((vocab) => (
+    vocab.title.toLowerCase().includes(searchValue)
+    || vocab.definition.toLowerCase().includes(searchValue)
+  ));
+
+  return { vocab: filteredVocab };
+};
+
 export {
-  getVocab, updateVocab, getSingleVocab, deleteSingleVocab, createVocab, getVocabByLanguageID
+  getVocab, updateVocab, getSingleVocab, deleteSingleVocab, createVocab, getVocabByLanguageID, searchVocab
 };
