@@ -1,4 +1,5 @@
 import { getVocab, searchVocab } from '../api/vocabData';
+import addLanguageOp from '../components/forms/addLanguage';
 import addVocabEntry from '../components/forms/addVocabEntry';
 import showVocab from '../pages/vocab';
 import clearDom from '../utils/clearDom';
@@ -29,6 +30,11 @@ const navEvents = (uid) => {
     });
 
     document.querySelector('#search').value = '';
+  });
+
+  document.querySelector('#language-option').addEventListener('click', () => {
+    addLanguageOp();
+    document.querySelector('.navbar-toggler').click();
   });
 };
 

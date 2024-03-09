@@ -1,4 +1,4 @@
-import getLanguage from '../api/languageData';
+import { getLanguage } from '../api/languageData';
 import { getVocab } from '../api/vocabData';
 import clearDom from '../utils/clearDom';
 import renderToDom from '../utils/renderToDom';

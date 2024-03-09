@@ -1,3 +1,4 @@
+import { createLanguage, updateLanguage } from '../api/languageData';
 import {
   createVocab, getVocab, updateVocab
 } from '../api/vocabData';
@@ -35,6 +36,21 @@ const formEvents = (uid) => {
         const patchPayload = { firebaseKey: name };
 
         updateVocab(patchPayload).then(() => {
+          getVocab(uid).then((vocab) => showVocab(vocab, uid));
+        });
+      });
+    }
+
+    if (e.target.id.includes('submit-language')) {
+      const payload = {
+        language: document.querySelector('#language').value,
+        uid,
+      };
+
+      createLanguage(payload).then(({ name }) => {
+        const patchPayload = { firebaseKey: name };
+
+        updateLanguage(patchPayload).then(() => {
           getVocab(uid).then((vocab) => showVocab(vocab, uid));
         });
       });

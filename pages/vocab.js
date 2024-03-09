@@ -1,5 +1,4 @@
-// import getLanguage from '../api/languageData';
-import getLanguage from '../api/languageData';
+import { getLanguage } from '../api/languageData';
 import clearDom from '../utils/clearDom';
 import renderToDom from '../utils/renderToDom';
 
@@ -25,7 +24,7 @@ const showVocab = async (array, uid) => {
     <div class="card" style="width: 18rem;">
       <div class="card-body">
         <h5 class="card-title">${item.title}</h5>
-        <h6 class="card-subtitle mb-2 text-body-secondary">${singleLang.language}</h6>
+        <h6 class="card-subtitle mb-2 text-body-secondary">Language: ${singleLang.language}</h6>
         <p class="card-text">${item.definition}</p>
         <a href="#" class="card-link" id="vocab-edit--${item.firebaseKey}">Edit</a>
         <a href="#" class="card-link" id="vocab-delete--${item.firebaseKey}">Delete</a>
