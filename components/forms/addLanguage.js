@@ -9,7 +9,7 @@ const addLanguageOp = (obj = {}) => {
       <label for="image">Language</label>
       <input type="text" class="form-control" id="language" placeholder="Enter Coding Language" value="${obj.language || ''}" required>
     </div>
-    <button type="submit" class="btn btn-primary mt-3">${obj.firebaseKey ? 'Update Vocab' : 'Submit Form'}</button>
+    <button type="submit" class="btn btn-primary mt-3">${obj.firebaseKey ? 'Update Language' : 'Submit Form'}</button>
   </form>`;
 
   renderToDom('#form-container', domStr);

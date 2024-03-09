@@ -23,20 +23,9 @@ const domEvents = (uid) => {
       }
     }
 
-    if (e.target.id.includes('filter-html')) {
-      filteredVocab(uid, '-Ns-cIa2fLmA4nK13rHy');
-    }
-
-    if (e.target.id.includes('filter-css')) {
-      filteredVocab(uid, '-Ns-cIa2fLmA4nK13rHz');
-    }
-
-    if (e.target.id.includes('filter-js')) {
-      filteredVocab(uid, '-Ns-cIa3W_M2cC-21sIw');
-    }
-
-    if (e.target.id.includes('filter-py')) {
-      filteredVocab(uid, '-Ns-cIa3W_M2cC-21sIx');
+    if (e.target.id.startsWith('filter-btn')) {
+      const [, languageID] = e.target.id.split('--');
+      filteredVocab(uid, languageID);
     }
 
     if (e.target.id.includes('all-vocabCards')) {

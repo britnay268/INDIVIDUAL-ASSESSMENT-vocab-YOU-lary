@@ -7,16 +7,14 @@ import renderToDom from '../utils/renderToDom';
 const showVocab = async (array, uid) => {
   clearDom();
 
-  const filterBtnStr = `
-  <button type="button" class="btn btn-outline-dark" id="all-vocabCards">All Cards</button>
-  <button type="button" class="btn btn-outline-dark" id="filter-html">HTML</button>
-  <button type="button" class="btn btn-outline-dark" id="filter-css">CSS</button>
-  <button type="button" class="btn btn-outline-dark" id="filter-js">JavaScript</button>
-  <button type="button" class="btn btn-outline-dark" id="filter-py">Python</button>`;
-  renderToDom('#filterBtns', filterBtnStr);
-
   let domStr = '';
   const languages = await getLanguage(uid);
+
+  let filterBtnStr = '<button type="button" class="btn btn-outline-dark" id="all-vocabCards">All</button>';
+
+  // For each lang in the languages array, it generates a HTML button string with the language name and firebase key in the id.
+  filterBtnStr += languages.map((lang) => `<button type="button" class="btn btn-outline-dark" id="filter-btn--${lang.firebaseKey}">${lang.language}</button>`).join(' ');
+  renderToDom('#filterBtns', filterBtnStr);
 
   array.forEach((item) => {
     const singleLang = languages.find((lang) => lang.firebaseKey === item.language_id);

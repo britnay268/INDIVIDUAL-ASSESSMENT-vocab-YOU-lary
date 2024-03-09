@@ -64,3 +64,27 @@ body {
   margin-top: 15px;
   margin-left: 30px;
 }
+
+#login-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  h1 {
+    color: whitesmoke;
+    margin-bottom: 50px;
+  }
+
+  button {
+    background-color: peru;
+    border: 0px;
+    padding: 10px 20px;
+    font-weight: bold;
+  }
+}
+
+#all-vocabCards {
+  margin-right: 5px;
+}
