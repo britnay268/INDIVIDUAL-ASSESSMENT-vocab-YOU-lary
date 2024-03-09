@@ -5,6 +5,7 @@ import navBar from '../components/shared/navBar';
 import domEvents from '../events/domEvents';
 import formEvents from '../events/formEvents';
 import navEvents from '../events/navEvents';
+import featureSort from '../pages/sort';
 import showVocab from '../pages/vocab';
 
 const startApp = (uid) => {
@@ -14,6 +15,7 @@ const startApp = (uid) => {
   navBar();
   logoutButton();
   navEvents(uid); // NAVBAR EVENTLISTENERS GO HERE
+  featureSort();
 
   // Put the cards on the DOM on app load
   getVocab(uid).then((vocab) => showVocab(vocab, uid));

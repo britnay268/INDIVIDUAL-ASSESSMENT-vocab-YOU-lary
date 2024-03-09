@@ -12,7 +12,7 @@ const addVocabEntry = (obj = {}) => {
    </div>
    <div class="form-group">
      <label for="vocab-definition">Definition</label>
-     <textarea type="text" class="form-control" id="vocab-definition" style="height: 100px" placeholder="Enter a definition" value="${obj.definition || ''}" required></textarea>
+     <textarea type="text" class="form-control" id="vocab-definition" style="height: 100px" placeholder="Enter a definition" value="" required>${obj.definition || ''}</textarea>
   </div>
   <div class="form-group" id="select-language"></div>
   <button type="submit" class="btn btn-primary mt-3">${obj.firebaseKey ? 'Update Vocab' : 'Submit Form'}</button>
