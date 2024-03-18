@@ -19,6 +19,7 @@ const startApp = (uid) => {
 
   // Put the cards on the DOM on app load
   getVocab(uid).then((vocab) => showVocab(vocab, uid));
+  getVocab().then((vocab) => showVocab(vocab));
 };
 
 export default startApp;
