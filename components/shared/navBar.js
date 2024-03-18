@@ -16,8 +16,8 @@ const navBar = () => {
           <li class="nav-item">
             <a class="nav-link" href="#" id="language-option">Create a Language Option</a>
           </li>
-          <form class="d-flex" role="search" id="searchVocab">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id='search'>
+          <form class="d-flex" role="search" id="search-Vocab">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="search">
           <button class="btn btn-outline-success" type="submit" style="margin-right: 20px">Search</button>
           </form>
           </li>

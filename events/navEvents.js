@@ -1,4 +1,5 @@
-import { getVocab, searchVocab } from '../api/vocabData';
+import { searchVocab } from '../api/mergedData';
+import { getVocab } from '../api/vocabData';
 import addLanguageOp from '../components/forms/addLanguage';
 import addVocabEntry from '../components/forms/addVocabEntry';
 import showVocab from '../pages/vocab';
@@ -15,7 +16,7 @@ const navEvents = (uid) => {
     getVocab(uid).then((vocab) => showVocab(vocab, uid));
   });
 
-  document.querySelector('#searchVocab').addEventListener('submit', () => {
+  document.querySelector('#search-Vocab').addEventListener('submit', () => {
     const searchValue = document.querySelector('#search').value.toLowerCase();
 
     searchVocab(searchValue, uid).then(({ vocab }) => {
