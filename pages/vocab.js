@@ -1,4 +1,5 @@
-import { getLanguage } from '../api/languageData';
+// import { getLanguage } from '../api/languageData';
+import { getCombinedLanguage } from '../api/mergedData';
 import clearDom from '../utils/clearDom';
 import renderToDom from '../utils/renderToDom';
 
@@ -8,7 +9,7 @@ const showVocab = async (array, uid) => {
   clearDom();
 
   let domStr = '';
-  const languages = await getLanguage(uid);
+  const languages = await getCombinedLanguage(uid);
 
   let filterBtnStr = '<button type="button" class="btn btn-outline-dark" id="all-vocabCards">All</button>';
 

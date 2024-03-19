@@ -1,9 +1,16 @@
+import { getLanguage, getLanguageWithoutUid } from './languageData';
 import { getVocab, getVocabWithoutUid } from './vocabData';
 
 const getCombinedVocab = async (uid) => {
   const vocabWithUid = await getVocab(uid);
   const vocabWithoutUid = await getVocabWithoutUid();
   return [...vocabWithUid, ...vocabWithoutUid];
+};
+
+const getCombinedLanguage = async (uid) => {
+  const languageWithUid = await getLanguage(uid);
+  const languageWithoutUid = await getLanguageWithoutUid();
+  return [...languageWithUid, ...languageWithoutUid];
 };
 
 const searchVocab = async (searchValue, uid) => {
@@ -16,4 +23,4 @@ const searchVocab = async (searchValue, uid) => {
 
   return { vocab: filteredVocab };
 };
-export { getCombinedVocab, searchVocab };
+export { getCombinedVocab, searchVocab, getCombinedLanguage };

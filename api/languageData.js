@@ -3,8 +3,33 @@ import client from '../utils/client';
 const endpoint = client.databaseURL;
 
 // TODO: Get Vocab
+const getLanguageWithoutUid = () => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/language.json`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      if (data) {
+        const newData = Object.values(data).filter((item) => item.uid === undefined || item.uid === '');
+        resolve(newData);
+      } else {
+        resolve([]);
+      }
+    })
+    .catch(reject);
+});
+
 const getLanguage = (uid) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/language.json?orderBy="uid"&equalTo="${uid}"`, {
+  let url = `${endpoint}/language.json`;
+  // If uid is provided, fetch data for that uid
+  if (uid) {
+    url += `?orderBy="uid"&equalTo="${uid}"`;
+  }
+
+  fetch(url, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json'
@@ -53,4 +78,6 @@ const updateLanguage = (payload) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-export { getLanguage, createLanguage, updateLanguage };
+export {
+  getLanguage, createLanguage, updateLanguage, getLanguageWithoutUid
+};

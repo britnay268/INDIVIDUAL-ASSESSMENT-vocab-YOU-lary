@@ -1,6 +1,7 @@
 import { createLanguage, updateLanguage } from '../api/languageData';
+import { getCombinedVocab } from '../api/mergedData';
 import {
-  createVocab, getVocab, updateVocab
+  createVocab, updateVocab
 } from '../api/vocabData';
 import showVocab from '../pages/vocab';
 
@@ -19,7 +20,7 @@ const formEvents = (uid) => {
       };
 
       updateVocab(payload).then(() => {
-        getVocab(uid).then((vocab) => showVocab(vocab, uid));
+        getCombinedVocab(uid).then((vocab) => showVocab(vocab, uid));
       });
     }
 
@@ -36,7 +37,7 @@ const formEvents = (uid) => {
         const patchPayload = { firebaseKey: name };
 
         updateVocab(patchPayload).then(() => {
-          getVocab(uid).then((vocab) => showVocab(vocab, uid));
+          getCombinedVocab(uid).then((vocab) => showVocab(vocab, uid));
         });
       });
     }
@@ -51,7 +52,7 @@ const formEvents = (uid) => {
         const patchPayload = { firebaseKey: name };
 
         updateLanguage(patchPayload).then(() => {
-          getVocab(uid).then((vocab) => showVocab(vocab, uid));
+          getCombinedVocab(uid).then((vocab) => showVocab(vocab, uid));
         });
       });
     }

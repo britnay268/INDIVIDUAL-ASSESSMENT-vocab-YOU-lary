@@ -1,5 +1,6 @@
-import { getLanguage } from '../api/languageData';
-import { getVocab } from '../api/vocabData';
+// import { getLanguage } from '../api/languageData';
+import { getCombinedLanguage, getCombinedVocab } from '../api/mergedData';
+// import { getVocab } from '../api/vocabData';
 import clearDom from '../utils/clearDom';
 import renderToDom from '../utils/renderToDom';
 
@@ -9,8 +10,8 @@ const filteredVocab = async (uid, languageID) => {
   clearDom();
 
   let domStr = '';
-  const languages = await getLanguage(uid);
-  const vocabs = await getVocab(uid);
+  const languages = await getCombinedLanguage(uid);
+  const vocabs = await getCombinedVocab(uid);
 
   let filterBtnStr = '<button type="button" class="btn btn-outline-dark" id="all-vocabCards">All</button>';
   filterBtnStr += languages.map((lang) => `<button type="button" class="btn btn-outline-dark" id="filter-btn--${lang.firebaseKey}">${lang.language}</button>`).join(' ');

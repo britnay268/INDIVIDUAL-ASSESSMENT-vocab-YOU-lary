@@ -1,6 +1,6 @@
 import { getCombinedVocab } from '../api/mergedData';
 import {
-  deleteSingleVocab, getSingleVocab, getVocab
+  deleteSingleVocab, getSingleVocab
 } from '../api/vocabData';
 import addVocabEntry from '../components/forms/addVocabEntry';
 import filteredVocab from '../pages/filteredvoacb';
@@ -21,7 +21,7 @@ const domEvents = (uid) => {
         const [, firebaseKey] = e.target.id.split('--');
 
         deleteSingleVocab(firebaseKey).then(() => {
-          getVocab(uid).then((vocab) => showVocab(vocab, uid));
+          getCombinedVocab(uid).then((vocab) => showVocab(vocab, uid));
         });
       }
     }
@@ -32,7 +32,7 @@ const domEvents = (uid) => {
     }
 
     if (e.target.id.includes('all-vocabCards')) {
-      getVocab(uid).then((vocab) => showVocab(vocab, uid));
+      getCombinedVocab(uid).then((vocab) => showVocab(vocab, uid));
     }
 
     if (e.target.id.includes('alphabetically')) {
