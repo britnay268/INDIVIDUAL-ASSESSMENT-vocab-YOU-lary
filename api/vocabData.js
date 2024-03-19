@@ -3,8 +3,33 @@ import client from '../utils/client';
 const endpoint = client.databaseURL;
 
 // TODO: Get Vocab
+const getVocabWithoutUid = () => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/vocab.json`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      if (data) {
+        const newData = Object.values(data).filter((item) => item.uid === undefined || item.uid === '');
+        resolve(newData);
+      } else {
+        resolve([]);
+      }
+    })
+    .catch(reject);
+});
+
 const getVocab = (uid) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/vocab.json?orderBy="uid"&equalTo="${uid}"`, {
+  let url = `${endpoint}/vocab.json`;
+  // If uid is provided, fetch data for that uid
+  if (uid) {
+    url += `?orderBy="uid"&equalTo="${uid}"`;
+  }
+
+  fetch(url, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json'
@@ -94,5 +119,5 @@ const getVocabByLanguageID = (uid) => new Promise((resolve, reject) => {
 });
 
 export {
-  getVocab, updateVocab, getSingleVocab, deleteSingleVocab, createVocab, getVocabByLanguageID
+  getVocab, updateVocab, getSingleVocab, deleteSingleVocab, createVocab, getVocabByLanguageID, getVocabWithoutUid
 };

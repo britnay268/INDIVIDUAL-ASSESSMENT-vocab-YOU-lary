@@ -1,4 +1,5 @@
-import getLanguage from '../../api/languageData';
+// import { getLanguage } from '../../api/languageData';
+import { getCombinedLanguage } from '../../api/mergedData';
 import renderToDom from '../../utils/renderToDom';
 
 const selectLanguage = (uid, languageID) => {
@@ -6,7 +7,7 @@ const selectLanguage = (uid, languageID) => {
   <select class="form-control" id="language_id" required>
   <option value="">Select Language</option>`;
 
-  getLanguage(uid).then((languageArray) => {
+  getCombinedLanguage(uid).then((languageArray) => {
     languageArray.forEach((language) => {
       domStr += `
       <option 

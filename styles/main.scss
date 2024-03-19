@@ -42,6 +42,29 @@ body {
     }
   }
 
+  #vocab-container2 {
+    display: flex;
+    flex-flow: row wrap;
+    text-align: center;
+    justify-content: center;
+
+    .card {
+      width: 300px;
+      margin: 5px;
+      background-color: gray;
+      color: white;
+    }
+
+    a {
+      color: #6a01ebbf;
+    }
+
+    .card-title {
+      font-family: "Caveat", cursive;
+      font-size: 35px;
+    }
+  }
+
   #form-container {
     width: 80%;
     margin: auto;
@@ -55,6 +78,8 @@ body {
   }
 }
 
+
+
 #logo {
   font-family: "Caveat", cursive;
   font-size: 30px;
@@ -63,4 +88,28 @@ body {
 #feature-sort {
   margin-top: 15px;
   margin-left: 30px;
+}
+
+#login-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  h1 {
+    color: whitesmoke;
+    margin-bottom: 50px;
+  }
+
+  button {
+    background-color: peru;
+    border: 0px;
+    padding: 10px 20px;
+    font-weight: bold;
+  }
+}
+
+#all-vocabCards {
+  margin-right: 5px;
 }

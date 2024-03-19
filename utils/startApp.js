@@ -1,4 +1,5 @@
-import { getVocab } from '../api/vocabData';
+import { getCombinedVocab } from '../api/mergedData';
+// import { getVocab, getVocabWithoutUid } from '../api/vocabData';
 import logoutButton from '../components/logoutButton';
 import domBuilder from '../components/shared/domBuilder';
 import navBar from '../components/shared/navBar';
@@ -18,7 +19,7 @@ const startApp = (uid) => {
   featureSort();
 
   // Put the cards on the DOM on app load
-  getVocab(uid).then((vocab) => showVocab(vocab, uid));
+  getCombinedVocab(uid).then((vocab) => showVocab(vocab, uid));
 };
 
 export default startApp;
