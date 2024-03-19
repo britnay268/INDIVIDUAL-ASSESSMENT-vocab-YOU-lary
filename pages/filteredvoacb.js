@@ -17,6 +17,8 @@ const filteredVocab = async (uid, languageID) => {
   filterBtnStr += languages.map((lang) => `<button type="button" class="btn btn-outline-dark" id="filter-btn--${lang.firebaseKey}">${lang.language}</button>`).join(' ');
   renderToDom('#filterBtns', filterBtnStr);
 
+  let cardsFound = false;
+
   vocabs.forEach(async (item) => {
     if (item.language_id === languageID) {
       const singleLang = languages.find((lang) => lang.firebaseKey === item.language_id);
@@ -28,10 +30,19 @@ const filteredVocab = async (uid, languageID) => {
         <p class="card-text">${item.definition}</p>
         <a href="#" class="card-link" id="vocab-edit--${item.firebaseKey}">Edit</a>
         <a href="#" class="card-link" id="vocab-delete--${item.firebaseKey}">Delete</a>
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="publicCard" ${item.uid ? 'checked' : ''}>
+          <label class="form-check-label" for="public" style="margin-left: -180px;">Private</label>
+        </div>
       </div>
       </div>`;
+
+      cardsFound = true;
     }
   });
+  if (!cardsFound) {
+    domStr = '<h2>There are no cards under this language</h2>';
+  }
   renderToDom('#vocab-container', domStr);
 };
 

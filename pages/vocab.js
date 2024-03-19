@@ -27,6 +27,10 @@ const showVocab = async (array, uid) => {
         <p class="card-text">${item.definition}</p>
         <a href="#" class="card-link" id="vocab-edit--${item.firebaseKey}">Edit</a>
         <a href="#" class="card-link" id="vocab-delete--${item.firebaseKey}">Delete</a>
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="publicCard" ${item.uid ? 'checked' : ''}>
+          <label class="form-check-label" for="public" style="margin-left: -180px;">Private</label>
+        </div>
       </div>
     </div>`;
   });
