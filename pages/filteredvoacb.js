@@ -17,6 +17,7 @@ const filteredVocab = async (uid, languageID) => {
   filterBtnStr += languages.map((lang) => `<button type="button" class="btn btn-outline-dark" id="filter-btn--${lang.firebaseKey}">${lang.language}</button>`).join(' ');
   renderToDom('#filterBtns', filterBtnStr);
 
+  // Keeps track of whether aany cards matching thr language ID is found
   let cardsFound = false;
 
   vocabs.forEach(async (item) => {
@@ -36,10 +37,11 @@ const filteredVocab = async (uid, languageID) => {
         </div>
       </div>
       </div>`;
-
+      // cards found is true when the itemlanguage_id is equal to languageID
       cardsFound = true;
     }
   });
+  // not cards found which means if itemlanguage_id is not equal to languageID, then this is true and runs
   if (!cardsFound) {
     domStr = '<h2>There are no cards under this language</h2>';
   }

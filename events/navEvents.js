@@ -37,6 +37,10 @@ const navEvents = (uid) => {
     addLanguageOp();
     document.querySelector('.navbar-toggler').click();
   });
+
+  document.querySelector('#community').addEventListener('click', () => {
+    console.warn('Community');
+  });
 };
 
 export default navEvents;
