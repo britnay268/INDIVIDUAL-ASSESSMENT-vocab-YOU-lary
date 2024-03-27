@@ -40,7 +40,6 @@ const navEvents = (uid) => {
   });
 
   document.querySelector('#community').addEventListener('click', () => {
-    console.warn('Community');
     getVocabWithoutUid().then((vocab) => showVocab(vocab, uid));
   });
 };
