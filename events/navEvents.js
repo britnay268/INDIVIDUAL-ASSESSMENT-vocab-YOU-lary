@@ -1,4 +1,5 @@
 import { getCombinedVocab, searchVocab } from '../api/mergedData';
+import { getVocabWithoutUid } from '../api/vocabData';
 // import { getVocab } from '../api/vocabData';
 import addLanguageOp from '../components/forms/addLanguage';
 import addVocabEntry from '../components/forms/addVocabEntry';
@@ -40,6 +41,7 @@ const navEvents = (uid) => {
 
   document.querySelector('#community').addEventListener('click', () => {
     console.warn('Community');
+    getVocabWithoutUid().then((vocab) => showVocab(vocab, uid));
   });
 };
 

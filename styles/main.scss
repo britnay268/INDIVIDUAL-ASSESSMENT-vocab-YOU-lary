@@ -30,6 +30,26 @@ body {
       margin: 5px;
       background-color: gray;
       color: white;
+
+      // .gui-switch {
+      //   display: flex;
+      //   align-items: center;
+      //   gap: 2ch;
+      //   justify-content: space-between;
+      // }
+
+      .gui-switch > input {
+        appearance: none;
+      
+        inline-size: var(--track-size);
+        block-size: var(--thumb-size);
+        padding: var(--track-padding);
+      
+        flex-shrink: 0;
+        display: grid;
+        align-items: center;
+        grid: [track] 1fr / [track] 1fr;
+      }
     }
 
     a {
