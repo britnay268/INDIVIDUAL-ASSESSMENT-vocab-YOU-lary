@@ -29,8 +29,8 @@ const showVocab = async (array, uid) => {
         <a href="#" class="card-link" id="vocab-delete--${item.firebaseKey}">Delete</a>
         </div>
         <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" style="margin-left: 60px;" ${item.uid ? 'checked' : ''}>
-          <label class="form-check-label" for="flexSwitchCheckChecked" style="margin-left: -90px;">Private</label>
+          <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked--${item.firebaseKey}" style="margin-left: 60px;" ${item.uid ? 'checked' : ''}>
+          <label class="form-check-label" for="flexSwitchCheckChecked" id="flexSwitchCheckChecked--${item.firebaseKey}" style="margin-left: -90px;">Private</label>
         </div>
     </div>`;
   });
