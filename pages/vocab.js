@@ -17,19 +17,27 @@ const showVocab = async (array, uid) => {
   filterBtnStr += languages.map((lang) => `<button type="button" class="btn btn-outline-dark" id="filter-btn--${lang.firebaseKey}">${lang.language}</button>`).join(' ');
   renderToDom('#filterBtns', filterBtnStr);
 
-  array.forEach((item) => {
-    const singleLang = languages.find((lang) => lang.firebaseKey === item.language_id);
-    domStr += `
-    <div class="card" style="width: 18rem;">
-      <div class="card-body">
-        <h5 class="card-title">${item.title}</h5>
-        <h6 class="card-subtitle mb-2 text-body-secondary">Language: ${singleLang ? singleLang.language : 'Unknown'}</h6>
-        <p class="card-text">${item.definition}</p>
-        <a href="#" class="card-link" id="vocab-edit--${item.firebaseKey}">Edit</a>
-        <a href="#" class="card-link" id="vocab-delete--${item.firebaseKey}">Delete</a>
-      </div>
-    </div>`;
-  });
+  if (array.length) {
+    array.forEach((item) => {
+      const singleLang = languages.find((lang) => lang.firebaseKey === item.language_id);
+      domStr += `
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">${item.title}</h5>
+          <h6 class="card-subtitle mb-2 text-body-secondary">Language: ${singleLang ? singleLang.language : 'Unknown'}</h6>
+          <p class="card-text">${item.definition}</p>
+          <a href="#" class="card-link" id="vocab-edit--${item.firebaseKey}">Edit</a>
+          <a href="#" class="card-link" id="vocab-delete--${item.firebaseKey}">Delete</a>
+          </div>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked--${item.firebaseKey}" style="margin-left: 60px;" ${item.uid ? 'checked' : ''}>
+            <label class="form-check-label" for="flexSwitchCheckChecked" id="flexSwitchCheckChecked--${item.firebaseKey}" style="margin-left: -90px;">Private</label>
+          </div>
+      </div>`;
+    });
+  } else {
+    domStr += '<h1>There are no cards</h1>';
+  }
 
   renderToDom('#vocab-container', domStr);
 };

@@ -1,4 +1,5 @@
 import { getCombinedVocab, searchVocab } from '../api/mergedData';
+import { getVocabWithoutUid } from '../api/vocabData';
 // import { getVocab } from '../api/vocabData';
 import addLanguageOp from '../components/forms/addLanguage';
 import addVocabEntry from '../components/forms/addVocabEntry';
@@ -36,6 +37,10 @@ const navEvents = (uid) => {
   document.querySelector('#language-option').addEventListener('click', () => {
     addLanguageOp();
     document.querySelector('.navbar-toggler').click();
+  });
+
+  document.querySelector('#community').addEventListener('click', () => {
+    getVocabWithoutUid().then((vocab) => showVocab(vocab, uid));
   });
 };
 

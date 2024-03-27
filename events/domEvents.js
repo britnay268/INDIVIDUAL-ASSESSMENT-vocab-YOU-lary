@@ -1,12 +1,12 @@
 import { getCombinedVocab } from '../api/mergedData';
 import {
-  deleteSingleVocab, getSingleVocab
+  deleteSingleVocab, getSingleVocab, updateVocab
 } from '../api/vocabData';
 import addVocabEntry from '../components/forms/addVocabEntry';
 import filteredVocab from '../pages/filteredvoacb';
 import showVocab from '../pages/vocab';
 
-const domEvents = (uid) => {
+const domEvents = async (uid) => {
   // This is used to combine the vocab with uid and vocab without uid
 
   document.querySelector('#container').addEventListener('click', async (e) => {
@@ -68,6 +68,30 @@ const domEvents = (uid) => {
         combinedVocab.sort((a, b) => b.timeSubmitted.localeCompare(a.timeSubmitted));
         showVocab(combinedVocab, uid);
       });
+    }
+
+    if (e.target.id.includes('flexSwitchCheckChecked')) {
+      const [, cardFirebaseKey] = e.target.id.split('--');
+
+      const vocabulary = await getCombinedVocab();
+
+      // Searchs vocab to see if the there is a firebaskey that matched the one associated to the card
+      const cardFound = vocabulary.find((item) => item.firebaseKey === cardFirebaseKey);
+
+      if (cardFound) {
+        // if the toggle is checked
+        if (e.target.checked) {
+          // it adds the uid of the user to the card
+          cardFound.uid = uid;
+          updateVocab(cardFound);
+          // console.warn(cardFound.uid);
+        } else {
+          // else if its not checked, it removes the uid from the card
+          cardFound.uid = '';
+          updateVocab(cardFound);
+          // console.warn('Toggle off', uid);
+        }
+      }
     }
   });
 };
