@@ -14,8 +14,10 @@ body {
   margin: 0 auto;
   margin-top: 100px;
 
-  #filterBtns {
-    margin: 0 auto;
+  #filtering-dropdown {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
   }
 
   #vocab-container {
@@ -105,10 +107,10 @@ body {
   font-size: 30px;
 }
 
-#feature-sort {
-  margin-top: 15px;
-  margin-left: 30px;
-}
+// #feature-sort {
+//   margin-top: 15px;
+//   margin-left: 30px;
+// }
 
 #login-page {
   display: flex;

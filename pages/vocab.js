@@ -11,10 +11,20 @@ const showVocab = async (array, uid) => {
   let domStr = '';
   const languages = await getCombinedLanguage(uid);
 
-  let filterBtnStr = '<button type="button" class="btn btn-outline-dark" id="all-vocabCards">All</button>';
+  let filterBtnStr = `
+  <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        FILTER by Language
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#" id="all-vocabCards">All</a></li>`;
 
   // For each lang in the languages array, it generates a HTML button string with the language name and firebase key in the id.
-  filterBtnStr += languages.map((lang) => `<button type="button" class="btn btn-outline-dark" id="filter-btn--${lang.firebaseKey}">${lang.language}</button>`).join(' ');
+  filterBtnStr += languages.map((lang) => `
+  <li><a class="dropdown-item" href="#" id="filter-btn--${lang.firebaseKey}">${lang.language}</a></li>`).join(' ');
+
+  filterBtnStr += `</ul>
+  </div>`;
   renderToDom('#filterBtns', filterBtnStr);
 
   if (array.length) {
